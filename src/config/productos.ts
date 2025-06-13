@@ -76,7 +76,7 @@ const productos = {
     {
       precio: "0",
       name: "maceta pants",
-      imgSrc: "/imagenes/ceramica/maceta pants.jpg",
+      imgSrc: "/imagenes/ceramica/maceta-pants.jpg",
     },
     {
       precio: "0",
@@ -238,4 +238,4 @@ const productos = {
   ],
 };
 
-export {productos}
+export { productos };

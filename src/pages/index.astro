@@ -28,6 +28,7 @@ import LabeledAccordion from "@/components/my-ui/LabeledAccordion.astro";
 
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { DisplayCarousel } from "@/components/my-ui/page/index/display-carousel";
+
 function randomIntFromInterval(min: number, max: number) {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -41,7 +42,7 @@ function randomIntFromInterval(min: number, max: number) {
       "grid grid-cols-subgrid",
       "bg-[#364A60] text-white",
       "py-2",
-      "text-xl"
+      "text-xl",
     )}
   >
     <div class="flex justify-between md:hidden col-[fullbleed] pl-4 pr-6">
@@ -67,7 +68,7 @@ function randomIntFromInterval(min: number, max: number) {
           "col-[fullbleed]",
           "justify-between items-center",
           "flex",
-          "pr-4"
+          "pr-4",
         )}
       >
         <HeaderNav client:only="react" />
@@ -97,22 +98,25 @@ function randomIntFromInterval(min: number, max: number) {
       />
     </section>
 
-    <section class="col-[fullbleed]">
-      <h1 class="text-lg underline-offset-4 underline text-center py-4">
+    <section
+      class="col-[fullbleed] md:col-[content] flex flex-col items-center"
+    >
+      <h1 class="text-2xl underline-offset-4 underline text-center pt-8 pb-12">
         Listado de productos
       </h1>
+
       <div
         class={cn(
-          "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6",
-          "gap-4"
+          "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4",
+          "gap-4",
         )}
       >
         {
-          { ...productos.remeras, ...productos.ceramica, ...productos.ofertas }
-            .sort((a, b) => Math.random() * 2 - 1)
+          [...productos.remeras, ...productos.ceramica, ...productos.ofertas]
+            // .sort((a, b) => Math.random() * 2 - 1)
             .map((producto) => {
               return (
-                <div>
+                <div class="flex flex-col gap-1">
                   <img src={producto.imgSrc} class="aspect-square" />
                   <h2>{producto.name}</h2>
                   <p>{producto.precio}</p>
