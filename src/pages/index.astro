@@ -57,7 +57,7 @@ function randomIntFromInterval(min: number, max: number) {
       </div>
     </div>
 
-    <div class="hidden md:grid grid-cols-subgrid col-[fullbleed]">
+    <div class="hidden md:grid grid-cols-subgrid col-[content]">
       <div class={cn("col-[fullbleed]", "grid grid-cols-[1fr_1fr_1fr]")}>
         <img alt="logo" src="/logo.jpg" class="h-16" />
         <div class="flex gap-2 items-center">
@@ -84,17 +84,17 @@ function randomIntFromInterval(min: number, max: number) {
       <!-- <img src="/imagenes/panel-principal/1.jpg" class="object-cover h-128 w-full" /> -->
       <DisplayCarousel
         images={[
-          "/imagenes/panel-principal/1.jpg",
-          "/imagenes/panel-principal/2.jpg",
-          "/imagenes/panel-principal/3.jpg",
-          "/imagenes/panel-principal/4.jpg",
-          "/imagenes/panel-principal/5.jpg",
-          "/imagenes/panel-principal/6.jpg",
-          "/imagenes/panel-principal/7.jpg",
-          "/imagenes/panel-principal/8.jpg",
+          "/imagenes/marketing/1.jpg",
+          "/imagenes/marketing/2.jpg",
+          "/imagenes/marketing/3.jpg",
+          "/imagenes/marketing/4.jpg",
+          "/imagenes/marketing/5.jpg",
+          "/imagenes/marketing/6.jpg",
+          "/imagenes/marketing/7.jpg",
+          "/imagenes/marketing/8.jpg",
           // TODO
-          // "/imagenes/panel-principal/9.jpg",
-          "/imagenes/panel-principal/10.jpg",
+          // "/imagenes/marketing/9.jpg",
+          "/imagenes/marketing/10.jpg",
         ]}
         client:only="react"
       />
@@ -103,14 +103,14 @@ function randomIntFromInterval(min: number, max: number) {
     <section
       class="col-[fullbleed] md:col-[content] flex flex-col items-center"
     >
-      <h1 class="text-2xl underline-offset-4 underline text-center pt-8 pb-12">
+      <h1 class="text-2xl underline-offset-8 underline text-center pt-8 pb-12">
         Listado de productos
       </h1>
 
       <div
         class={cn(
           "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4",
-          "gap-4",
+          "gap-x-4 gap-y-12",
         )}
       >
         {
@@ -125,6 +125,9 @@ function randomIntFromInterval(min: number, max: number) {
                   />
                   <h2>{producto.nombre}</h2>
                   <p>{producto.precio}</p>
+                  <div class="flex flex-wrap gap-1">{producto.categorias.map(categoria => (
+                    <span class="px-2 py-0.5 bg-zinc-800 text-white w-fit">{categoria}</span>
+                  ))}</div>
                 </div>
               );
             })

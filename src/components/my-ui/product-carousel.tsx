@@ -25,7 +25,11 @@ function ProductCarousel({ imagenes }: ProductCarouselProps) {
           >
             <img
               src={item}
-              className={cn("object-cover object-center", "aspect-square")}
+              className={cn(
+                "object-contain object-center",
+                "aspect-square",
+                "w-full",
+              )}
             />
           </CarouselItem>
         ))}
