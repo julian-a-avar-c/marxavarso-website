@@ -74,166 +74,84 @@ const productos = {
   ],
   ceramica: [
     {
+      nombre: "Maceta Pants",
       precio: "0",
-      name: "maceta pants",
-      imgSrc: "/imagenes/ceramica/maceta-pants.jpg",
+      imagenes: [
+        "/imagenes/ceramica/maceta-pants/maceta-pants-0.jpg",
+        "/imagenes/ceramica/maceta-pants/maceta-pants-1.jpg",
+        "/imagenes/ceramica/maceta-pants/maceta-pants-2.jpg",
+      ],
     },
     {
+      nombre: "Plato de ceramica",
       precio: "0",
-      name: "maceta pants(1)",
-      imgSrc: "/imagenes/ceramica/maceta pants(1).jpg",
+      imagenes: [
+        "/imagenes/ceramica/plato-de-ceramica/plato-de-ceramica-0.jpg",
+      ],
     },
     {
+      nombre: "Plato de pez",
       precio: "0",
-      name: "maceta pants(2)",
-      imgSrc: "/imagenes/ceramica/maceta pants(2).jpg",
+      imagenes: ["/imagenes/ceramica/plato-pez/plato-pez-0.jpg"],
     },
     {
+      nombre: "Pocillo arque",
       precio: "0",
-      name: "plato de ceramica.jpg",
-      imgSrc: "/imagenes/ceramica/plato de ceramica.jpg.jpg",
+      imagenes: ["/imagenes/ceramica/pocillo-arque/pocillo-arque-0.jpg"],
     },
     {
+      nombre: "Pocillo catlove",
       precio: "0",
-      name: "plato pez",
-      imgSrc: "/imagenes/ceramica/plato pez.jpg",
+      imagenes: [
+        "/imagenes/ceramica/pocillo-catlove/pocillo-catlove-0.jpg",
+        "/imagenes/ceramica/pocillo-catlove/pocillo-catlove-1.jpg",
+        "/imagenes/ceramica/pocillo-catlove/pocillo-catlove-2.jpg",
+      ],
     },
     {
+      nombre: "Pocillo libelula",
       precio: "0",
-      name: "pocillo arque",
-      imgSrc: "/imagenes/ceramica/pocillo arque.jpg",
+      imagenes: [
+        "/imagenes/ceramica/pocillo-libelula/pocillo-libelula-0.jpg",
+        "/imagenes/ceramica/pocillo-libelula/pocillo-libelula-1.jpg",
+      ],
     },
     {
+      nombre: "Portavasos",
       precio: "0",
-      name: "pocillo catlove",
-      imgSrc: "/imagenes/ceramica/pocillo catlove.jpg",
+      imagenes: [
+        "/imagenes/ceramica/portavasos/portavasos-0.jpg",
+        "/imagenes/ceramica/portavasos/portavasos-1.jpg",
+      ],
     },
     {
+      nombre: "Portavasos arq",
       precio: "0",
-      name: "pocillo catlove(1)",
-      imgSrc: "/imagenes/ceramica/pocillo catlove(1).jpg",
+      imagenes: [
+        "/imagenes/ceramica/portavasos-arq/portavasos-arq-0.jpg",
+        "/imagenes/ceramica/portavasos-arq/portavasos-arq-1.jpg",
+        "/imagenes/ceramica/portavasos-arq/portavasos-arq-2.jpg",
+        "/imagenes/ceramica/portavasos-arq/portavasos-arq-3.jpg",
+      ],
     },
     {
+      nombre: "Taza fairy core",
       precio: "0",
-      name: "pocillo catlove(2)",
-      imgSrc: "/imagenes/ceramica/pocillo catlove(2).jpg",
+      imagenes: [
+        "/imagenes/ceramica/taza-fairy-core/taza-fairy-core-0.jpg",
+        "/imagenes/ceramica/taza-fairy-core/taza-fairy-core-1.jpg",
+        "/imagenes/ceramica/taza-fairy-core/taza-fairy-core-2.jpg",
+        "/imagenes/ceramica/taza-fairy-core/taza-fairy-core-3.jpg",
+      ],
     },
     {
+      nombre: "Taza frutilla",
       precio: "0",
-      name: "pocillo libelula_",
-      imgSrc: "/imagenes/ceramica/pocillo libelula_.jpg",
-    },
-    {
-      precio: "0",
-      name: "pocillo libelula",
-      imgSrc: "/imagenes/ceramica/pocillo libelula.jpg",
-    },
-    {
-      precio: "0",
-      name: "portavasos arq",
-      imgSrc: "/imagenes/ceramica/portavasos arq.jpg",
-    },
-    {
-      precio: "0",
-      name: "portavasos arq(1)",
-      imgSrc: "/imagenes/ceramica/portavasos arq(1).jpg",
-    },
-    {
-      precio: "0",
-      name: "portavasos arq(2)",
-      imgSrc: "/imagenes/ceramica/portavasos arq(2).jpg",
-    },
-    {
-      precio: "0",
-      name: "portavasos arq(3)",
-      imgSrc: "/imagenes/ceramica/portavasos arq(3).jpg",
-    },
-    {
-      precio: "0",
-      name: "portavasos_",
-      imgSrc: "/imagenes/ceramica/portavasos_.jpg",
-    },
-    {
-      precio: "0",
-      name: "portavasos",
-      imgSrc: "/imagenes/ceramica/portavasos.jpg",
-    },
-    {
-      precio: "0",
-      name: "taza fairy core",
-      imgSrc: "/imagenes/ceramica/taza fairy core.jpg",
-    },
-    {
-      precio: "0",
-      name: "taza fairycore_",
-      imgSrc: "/imagenes/ceramica/taza fairycore_.jpg",
-    },
-    {
-      precio: "0",
-      name: "taza fairycore",
-      imgSrc: "/imagenes/ceramica/taza fairycore.jpg",
-    },
-    {
-      precio: "0",
-      name: "taza fairycore(1)",
-      imgSrc: "/imagenes/ceramica/taza fairycore(1).jpg",
-    },
-    {
-      precio: "0",
-      name: "taza frutilla",
-      imgSrc: "/imagenes/ceramica/taza frutilla.jpg",
-    },
-    {
-      precio: "0",
-      name: "taza frutilla(1)",
-      imgSrc: "/imagenes/ceramica/taza frutilla(1).jpg",
-    },
-    {
-      precio: "0",
-      name: "taza frutilla(2)",
-      imgSrc: "/imagenes/ceramica/taza frutilla(2).jpg",
-    },
-  ],
-  ofertas: [
-    {
-      precio: "0",
-      name: "remera eyes 1",
-      imgSrc: "/imagenes/ofertas/remera eyes 1.jpg",
-    },
-    {
-      precio: "0",
-      name: "remeras eyes 1",
-      imgSrc: "/imagenes/ofertas/remeras eyes 1.jpg",
-    },
-    {
-      precio: "0",
-      name: "remeras eyes 1(1)",
-      imgSrc: "/imagenes/ofertas/remeras eyes 1(1).jpg",
-    },
-    {
-      precio: "0",
-      name: "taza mariposa_",
-      imgSrc: "/imagenes/ofertas/taza mariposa_.jpg",
-    },
-    {
-      precio: "0",
-      name: "taza mariposa",
-      imgSrc: "/imagenes/ofertas/taza mariposa.jpg",
-    },
-    {
-      precio: "0",
-      name: "taza minion",
-      imgSrc: "/imagenes/ofertas/taza minion.jpg",
-    },
-    {
-      precio: "0",
-      name: "taza minion(1)",
-      imgSrc: "/imagenes/ofertas/taza minion(1).jpg",
-    },
-    {
-      precio: "0",
-      name: "taza minion(2)",
-      imgSrc: "/imagenes/ofertas/taza minion(2).jpg",
+      imagenes: [
+        "/imagenes/ceramica/taza-frutilla/taza-frutilla-0.jpg",
+        "/imagenes/ceramica/taza-frutilla/taza-frutilla-1.jpg",
+        "/imagenes/ceramica/taza-frutilla/taza-frutilla-2.jpg",
+      ],
     },
   ],
 };
