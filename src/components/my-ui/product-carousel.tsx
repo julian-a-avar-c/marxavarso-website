@@ -20,17 +20,18 @@ function ProductCarousel({ imagenes }: ProductCarouselProps) {
       <CarouselContent>
         {imagenes.map((item) => (
           <CarouselItem
-            key={// Image name without extension
-            item.split("/").at(-1)?.split(".").at(0)}
+            key={
+              // Image name without extension
+              item.split("/").at(-1)?.split(".").at(0)
+            }
+            className="aspect-square"
           >
-            <img
-              src={item}
-              className={cn(
-                "object-contain object-center",
-                "aspect-square",
-                "w-full",
-              )}
-            />
+            <div className={cn("size-full", "transition-all duration-500", "[&:hover>img]:transform-[scale(1.2)]")}>
+              <img
+                src={item}
+                className={cn("object-contain object-center", "size-full")}
+              />
+            </div>
           </CarouselItem>
         ))}
       </CarouselContent>

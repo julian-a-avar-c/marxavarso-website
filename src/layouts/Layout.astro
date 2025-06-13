@@ -55,9 +55,9 @@ type Props = {
 const { title, class: className } = Astro.props;
 
 const documentTitle =
-  title === config.shortTitle
-    ? config.shortTitle
-    : config.shortTitle + (title === undefined ? "" : ` - ${title}`);
+  title === config.title
+    ? config.title
+    : config.title + (title === undefined ? "" : ` - ${title}`);
 ---
 
 <!doctype html>

@@ -7,90 +7,47 @@ import { Icon } from "astro-icon/components";
 import { Button } from "@/components/ui/button";
 
 import { HeaderNav } from "@/components/layout/HeaderNav";
+import { Input } from "../ui/input";
 ---
 
-<header class={cn("col-[fullbleed]", "grid grid-cols-subgrid", "text-white")}>
-  <section
-    class={cn(
-      "col-[fullbleed]",
-      "hidden sm:grid",
-      "grid-cols-subgrid",
-      "py-2",
-      "bg-[url(/images/textures/noise.svg)] bg-black/87 bg-blend-darken",
-    )}
-  >
-    <div class={cn("col-[content]", "flex justify-between")}>
-      <a
-        href={config.links.site?.href}
-        class="font-bold font-distant-galaxy"
-        style={{ textDecorationLine: "none" }}
-      >
-        <span>{config.title}</span>
-      </a>
-
-      <address
-        class={cn(
-          "not-italic",
-          "flex gap-4",
-          "[&>a]:flex [&>a]:items-center [&>a]:gap-0.5",
-        )}
-      >
-        <a href={config.links.phone.href}>
-          <Icon name={config.links.phone.icon} />
-          <span>{config.links.phone.value}</span>
-        </a>
-        <a href={config.links.email.href}>
-          <Icon name={config.links.email.icon} />
-          <span>{config.links.email.value}</span>
-        </a>
-      </address>
+<header
+  class={cn(
+    "col-[fullbleed]",
+    "grid grid-cols-subgrid",
+    "bg-[#364A60] text-white",
+    "py-2",
+    "text-xl",
+  )}
+>
+  <div class="flex justify-between md:hidden col-[fullbleed] pl-4 pr-6">
+    <div class="flex gap-4 items-center">
+      <Icon name="lucide:menu" />
+      <img alt="logo" src="/logo.png" class="h-16" />
     </div>
-  </section>
+    <div class="flex gap-4 items-center">
+      <Icon name="fa6-solid:magnifying-glass" />
+      <Icon name="fa6-solid:bag-shopping" />
+    </div>
+  </div>
 
-  <section
-    class={cn(
-      "col-[fullbleed]",
-      "grid grid-cols-subgrid",
-      "bg-[url(/images/textures/noise.svg)] bg-black/90 bg-blend-darken",
-    )}
-  >
-    <div
-      class={cn(
-        "col-[content]",
-        "flex gap-4 justify-between",
-        "px-4 2xl:px-0",
-        "py-4 xl:py-6",
-      )}
-    >
-      <!-- division height should be 16 -->
-      <a href="/" class="flex gap-4">
-        <img
-          class="h-12 sm:h-16 invert"
-          src="/images/logo/pacs_icon_350x300.png"
-          alt="PACS Logo"
-        />
-        <img
-          class="hidden sm:block h-12 invert self-end"
-          src="/images/logo/pacs_logo_extrasmall.png"
-          alt="PACS"
-        />
-      </a>
-
-      <div class={cn("flex items-center gap-4 sm:gap-8", "self-end")}>
-        <HeaderNav class="hidden xl:block" client:only="react" />
-        <Button
-          variant="secondary"
-          size="lg"
-          className="text-lg h-12 rounded-sm">Get in touch</Button
-        >
-        <Button
-          variant="secondary"
-          size="lg"
-          className="block sm:hidden text-lg h-12 rounded-sm"
-        >
-          <Icon name="radix-icons:hamburger-menu" />
-        </Button>
+  <div class="hidden md:grid grid-cols-subgrid col-[content] gap-4">
+    <div class={cn("col-[fullbleed]", "grid grid-cols-[1fr_1fr_1fr]")}>
+      <img alt="logo" src="/logo.png" class="h-16" />
+      <div class="flex gap-2 items-center">
+        <Input type="search" placeholder="¿Qué buscás?" />
+        <Icon name="fa6-solid:magnifying-glass" />
       </div>
     </div>
-  </section>
+    <div
+      class={cn(
+        "col-[fullbleed]",
+        "justify-between items-center",
+        "flex",
+        "pr-4"
+      )}
+    >
+      <HeaderNav client:only="react" />
+      <Icon name="fa6-solid:bag-shopping" class={""} />
+    </div>
+  </div>
 </header>
