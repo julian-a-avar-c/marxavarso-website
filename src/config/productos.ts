@@ -10,7 +10,7 @@ type Categoria =
   | "oferta"
   | "otro";
 
-function talleStandar(categoria: Categoria) {
+function talleStandard(categoria: Categoria) {
   return (
     {
       top: ["sm"],
@@ -27,7 +27,7 @@ function talleStandar(categoria: Categoria) {
   );
 }
 
-function precioStandar(categoria: Categoria) {
+function precioStandard(categoria: Categoria) {
   return (
     {
       top: "$15mil",
@@ -45,6 +45,7 @@ function precioStandar(categoria: Categoria) {
 }
 
 type Producto = {
+  id: string;
   nombre: string;
   categorias: Categoria[];
   precio?: string;
@@ -53,63 +54,69 @@ type Producto = {
 };
 
 const productos: {
-  remeras: Producto[];
+  indumentaria: Producto[];
   ceramica: Producto[];
   otros: Producto[];
 } = {
-  remeras: [
+  indumentaria: [
     {
+      id: "top-escarabajo",
       nombre: "Escarabajo top",
       categorias: ["top"],
-      talles: talleStandar("top"),
-      precio: precioStandar("top"),
+      talles: talleStandard("top"),
+      precio: precioStandard("top"),
       imagenes: [
         "/imagenes/productos/top-escarabajo/insecto-rojo-0.jpg",
         "/imagenes/productos/top-escarabajo/insecto-rojo-1.jpg",
       ],
     },
     {
+      id: "top-libelula",
       nombre: "Libelula",
       categorias: ["top"],
-      talles: talleStandar("top"),
-      precio: precioStandar("top"),
+      talles: talleStandard("top"),
+      precio: precioStandard("top"),
       imagenes: [
         "/imagenes/productos/top-libelula/libelula-0.jpg",
         "/imagenes/productos/top-libelula/libelula-1.jpg",
       ],
     },
     {
+      id: "top-mariposa",
       nombre: "Mariposa top",
       categorias: ["top"],
-      talles: talleStandar("top"),
-      precio: precioStandar("top"),
+      talles: talleStandard("top"),
+      precio: precioStandard("top"),
       imagenes: [
         "/imagenes/productos/top-mariposa/mariposa-0.jpg",
         "/imagenes/productos/top-mariposa/mariposa-1.jpg",
       ],
     },
     {
+      id: "top-medusa",
       nombre: "Medusa top",
       categorias: ["top"],
-      talles: talleStandar("top"),
-      precio: precioStandar("top"),
+      talles: talleStandard("top"),
+      precio: precioStandard("top"),
       imagenes: [
         "/imagenes/productos/top-medusa/medusa-top-0.jpg",
         "/imagenes/productos/top-medusa/medusa-top-1.jpg",
       ],
     },
     {
+      id: "top-pulpo",
       nombre: "Pulpo",
       categorias: ["top"],
-      talles: talleStandar("top"),
-      precio: precioStandar("top"),
+      talles: talleStandard("top"),
+      precio: precioStandard("top"),
       imagenes: ["/imagenes/productos/top-pulpo/pulpo-0.jpg"],
     },
     {
+      id: "remera-insectos",
       nombre: "Insectos",
       categorias: ["remera"],
-      talles: talleStandar("remera"),
-      precio: precioStandar("remera"),
+      talles: talleStandard("remera"),
+      precio: precioStandard("remera"),
       imagenes: [
         "/imagenes/productos/remera-insectos/insectos-0.jpg",
         "/imagenes/productos/remera-insectos/insectos-1.jpg",
@@ -118,10 +125,11 @@ const productos: {
       ],
     },
     {
+      id: "remera-pez",
       nombre: "Pez",
       categorias: ["remera"],
-      talles: talleStandar("remera"),
-      precio: precioStandar("remera"),
+      talles: talleStandard("remera"),
+      precio: precioStandard("remera"),
       imagenes: [
         "/imagenes/productos/remera-pez/pez-0.jpg",
         "/imagenes/productos/remera-pez/pez-1.jpg",
@@ -130,13 +138,14 @@ const productos: {
   ],
 
   // --------------------------------------------------------------------------
-  
+
   ceramica: [
     {
+      id: "taza-fairy",
       nombre: "Taza fairy core",
       categorias: ["taza"],
-      talles: talleStandar("taza"),
-      precio: precioStandar("taza"),
+      talles: talleStandard("taza"),
+      precio: precioStandard("taza"),
       imagenes: [
         "/imagenes/productos/taza-fairy-core/taza-fairy-core-0.jpg",
         "/imagenes/productos/taza-fairy-core/taza-fairy-core-1.jpg",
@@ -144,19 +153,19 @@ const productos: {
       ],
     },
     {
+      id: "plato-seimack",
       nombre: "Plato seimack",
       categorias: ["plato"],
-      talles: talleStandar("plato"),
-      precio: precioStandar("plato"),
-      imagenes: [
-        "/imagenes/productos/plato-seimack/plato-seimack-0.jpg",
-      ],
+      talles: talleStandard("plato"),
+      precio: precioStandard("plato"),
+      imagenes: ["/imagenes/productos/plato-seimack/plato-seimack-0.jpg"],
     },
     {
+      id: "pocillo-catlove",
       nombre: "Pocillo catlove",
       categorias: ["pocillo"],
-      talles: talleStandar("pocillo"),
-      precio: precioStandar("pocillo"),
+      talles: talleStandard("pocillo"),
+      precio: precioStandard("pocillo"),
       imagenes: [
         "/imagenes/productos/pocillo-catlove/pocillo-catlove-0.jpg",
         "/imagenes/productos/pocillo-catlove/pocillo-catlove-1.jpg",
@@ -164,28 +173,31 @@ const productos: {
       ],
     },
     {
+      id: "pocillo-libelula",
       nombre: "Pocillo libelula",
       categorias: ["pocillo"],
-      talles: talleStandar("pocillo"),
-      precio: precioStandar("pocillo"),
+      talles: talleStandard("pocillo"),
+      precio: precioStandard("pocillo"),
       imagenes: [
         "/imagenes/productos/pocillo-libelula/pocillo-libelula-0.jpg",
         "/imagenes/productos/pocillo-libelula/pocillo-libelula-1.jpg",
       ],
     },
     {
+      id: "pocillo-arque",
       nombre: "Pocillo arque",
       categorias: ["pocillo"],
-      talles: talleStandar("pocillo"),
-      precio: precioStandar("pocillo"),
+      talles: talleStandard("pocillo"),
+      precio: precioStandard("pocillo"),
       imagenes: ["/imagenes/productos/pocillo-arque/pocillo-arque-0.jpg"],
     },
   ],
 
   // --------------------------------------------------------------------------
-  
+
   otros: [
     {
+      id: "taza-minion",
       nombre: "Taza minion",
       categorias: ["pocillo", "otro", "oferta"],
       precio: "$7mil",
@@ -196,6 +208,7 @@ const productos: {
       ],
     },
     {
+      id: "taza-mariposa",
       nombre: "Taza mariposa",
       categorias: ["pocillo", "otro", "oferta"],
       precio: "$7mil",
@@ -205,6 +218,7 @@ const productos: {
       ],
     },
     {
+      id: "remera-eyes",
       nombre: "Remera eyes",
       categorias: ["remera", "otro", "oferta"],
       precio: "$10mil",
@@ -215,21 +229,24 @@ const productos: {
       ],
     },
     {
+      id: "plato-trepez",
       nombre: "Plato trepez",
       categorias: ["plato", "otro", "oferta"],
       precio: "$7mil",
       imagenes: ["/imagenes/productos/plato-trepez/plato-trepez-0.jpg"],
     },
     {
+      id: "portavasos",
       nombre: "Portavasos",
       categorias: ["portavasos"],
-      precio: precioStandar("portavasos"),
+      precio: precioStandard("portavasos"),
       imagenes: [
         "/imagenes/productos/portavasos/portavasos-0.jpg",
         "/imagenes/productos/portavasos/portavasos-1.jpg",
       ],
     },
     {
+      id: "portavasos-set",
       nombre: "Portavasos set",
       categorias: ["otro"],
       precio: "$30mil",
@@ -241,9 +258,10 @@ const productos: {
       ],
     },
     {
+      id: "taza-maceta",
       nombre: "Maceta Pants",
       categorias: ["taza", "oferta", "otro"],
-      talles: talleStandar("taza"),
+      talles: talleStandard("taza"),
       precio: "$10mil",
       imagenes: [
         "/imagenes/productos/taza-maceta-pants/maceta-pants-0.jpg",
@@ -252,6 +270,7 @@ const productos: {
       ],
     },
     {
+      id: "taza-frutilla",
       nombre: "Taza frutilla",
       categorias: ["taza", "oferta", "otro"],
       precio: "$25mil",
