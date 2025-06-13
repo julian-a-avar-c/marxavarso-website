@@ -28,6 +28,7 @@ import LabeledAccordion from "@/components/my-ui/LabeledAccordion.astro";
 
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { DisplayCarousel } from "@/components/my-ui/page/index/display-carousel";
+import { ProductCarousel } from "@/components/my-ui/product-carousel";
 
 function randomIntFromInterval(min: number, max: number) {
   // min and max included
@@ -55,6 +56,7 @@ function randomIntFromInterval(min: number, max: number) {
         <Icon name="fa6-solid:bag-shopping" />
       </div>
     </div>
+
     <div class="hidden md:grid grid-cols-subgrid col-[fullbleed]">
       <div class={cn("col-[fullbleed]", "grid grid-cols-[1fr_1fr_1fr]")}>
         <img alt="logo" src="/logo.jpg" class="h-16" />
@@ -117,7 +119,10 @@ function randomIntFromInterval(min: number, max: number) {
             .map((producto) => {
               return (
                 <div class="flex flex-col gap-1">
-                  <img src={producto.imagenes[0]} class="aspect-square" />
+                  <ProductCarousel
+                    imagenes={producto.imagenes}
+                    client:only="react"
+                  />
                   <h2>{producto.nombre}</h2>
                   <p>{producto.precio}</p>
                 </div>
