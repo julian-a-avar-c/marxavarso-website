@@ -70,7 +70,12 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
             key: "ceramicas",
             href: "/ceramicas",
             titulo: "Ceramicas",
-            categorias: ["pocillo", "taza", "plato", "portavasos"] as Categoria[],
+            categorias: [
+              "pocillo",
+              "taza",
+              "plato",
+              "portavasos",
+            ] as Categoria[],
           },
           {
             key: "otros",
@@ -91,10 +96,13 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
               </a>
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              {
-                (item.categorias ?? []).map((categoria) => ({categoria, productos: productosDeCategoria(categoria)}))
-                .filter(({categoria, productos}) => productos.length > 0)
-                .map(({categoria, productos}) => {
+              {(item.categorias ?? [])
+                .map((categoria) => ({
+                  categoria,
+                  productos: productosDeCategoria(categoria),
+                }))
+                .filter(({ categoria, productos }) => productos.length > 0)
+                .map(({ categoria, productos }) => {
                   return (
                     <div key="flex flex-col gap-4">
                       <div>{presetarCategoria(categoria as Categoria)}</div>

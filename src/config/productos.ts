@@ -35,10 +35,10 @@ export { type Categoria}
 function talleStandard(categoria: Categoria) {
   return (
     {
-      top: ["sm"],
-      remera: ["sm", "md", "lg", "custom"],
-      buzo: ["sm", "md", "lg", "custom"],
-      polera: ["sm", "md", "lg", "custom"],
+      top: ["S"],
+      remera: ["S", "M", "L", "A orden"],
+      buzo: ["S", "M", "L", "A orden"],
+      polera: ["S", "M", "L", "A orden"],
       pocillo: null,
       taza: null,
       plato: null,
