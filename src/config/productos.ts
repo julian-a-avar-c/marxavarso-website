@@ -1,77 +1,62 @@
 const productos = {
   remeras: [
     {
+      nombre: "Insecto rojo",
       precio: "0",
-      name: "insectos rojo",
-      imgSrc: "/imagenes/remeras/insectos rojo.jpg",
+      imagenes: [
+        "/imagenes/remeras/insecto-rojo/insecto-rojo-0.jpg",
+        "/imagenes/remeras/insecto-rojo/insecto-rojo-1.jpg",
+      ],
     },
     {
+      nombre: "Insectos",
       precio: "0",
-      name: "insectos rojo(1)",
-      imgSrc: "/imagenes/remeras/insectos rojo(1).jpg",
+      imagenes: [
+        "/imagenes/remeras/insectos/insectos-0.jpg",
+        "/imagenes/remeras/insectos/insectos-1.jpg",
+        "/imagenes/remeras/insectos/insectos-2.jpg",
+        "/imagenes/remeras/insectos/insectos-3.jpg",
+      ],
     },
     {
+      nombre: "Libelula",
       precio: "0",
-      name: "insectos",
-      imgSrc: "/imagenes/remeras/insectos.jpg",
+      imagenes: [
+        "/imagenes/remeras/libelula/libelula-0.jpg",
+        "/imagenes/remeras/libelula/libelula-1.jpg",
+      ],
     },
     {
+      nombre: "Mariposa",
       precio: "0",
-      name: "insectos(1)",
-      imgSrc: "/imagenes/remeras/insectos(1).jpg",
+      imagenes: [
+        "/imagenes/remeras/mariposa/mariposa-0.jpg",
+        "/imagenes/remeras/mariposa/mariposa-1.jpg",
+      ],
     },
     {
+      nombre: "Medusa top",
       precio: "0",
-      name: "insectos(2)",
-      imgSrc: "/imagenes/remeras/insectos(2).jpg",
+      imagenes: [
+        "/imagenes/remeras/medusa-top/medusa-top-0.jpg",
+        "/imagenes/remeras/medusa-top/medusa-top-1.jpg",
+      ],
     },
     {
+      nombre: "Pez",
       precio: "0",
-      name: "insectos(3)",
-      imgSrc: "/imagenes/remeras/insectos(3).jpg",
+      imagenes: [
+        "/imagenes/remeras/pez/pez-0.jpg",
+        "/imagenes/remeras/pez/pez-1.jpg",
+      ],
     },
     {
+      nombre: "Pulpo",
       precio: "0",
-      name: "libelula",
-      imgSrc: "/imagenes/remeras/libelula.jpg",
-    },
-    {
-      precio: "0",
-      name: "libelula(1)",
-      imgSrc: "/imagenes/remeras/libelula(1).jpg",
-    },
-    {
-      precio: "0",
-      name: "mariposa",
-      imgSrc: "/imagenes/remeras/mariposa.jpg",
-    },
-    {
-      precio: "0",
-      name: "mariposa(1)",
-      imgSrc: "/imagenes/remeras/mariposa(1).jpg",
-    },
-    {
-      precio: "0",
-      name: "medusa top",
-      imgSrc: "/imagenes/remeras/medusa top.jpg",
-    },
-    {
-      precio: "0",
-      name: "medusa top(1)",
-      imgSrc: "/imagenes/remeras/medusa top(1).jpg",
-    },
-    { precio: "0", name: "pez", imgSrc: "/imagenes/remeras/pez.jpg" },
-    {
-      precio: "0",
-      name: "pez(1)",
-      imgSrc: "/imagenes/remeras/pez(1).jpg",
-    },
-    {
-      precio: "0",
-      name: "pulpo",
-      imgSrc: "/imagenes/remeras/pulpo.jpg",
+      imagenes: ["/imagenes/remeras/pulpo/pulpo-0.jpg"],
     },
   ],
+  // --------------------------------------------------------------------------
   ceramica: [
     {
       nombre: "Maceta Pants",
@@ -151,6 +136,35 @@ const productos = {
         "/imagenes/ceramica/taza-frutilla/taza-frutilla-0.jpg",
         "/imagenes/ceramica/taza-frutilla/taza-frutilla-1.jpg",
         "/imagenes/ceramica/taza-frutilla/taza-frutilla-2.jpg",
+      ],
+    },
+  ],
+  // --------------------------------------------------------------------------
+  otros: [
+    {
+      nombre: "Remera eyes",
+      precio: "0",
+      imagenes: [
+        "/imagenes/otros/remera-eyes/remera-eyes-0.jpg",
+        "/imagenes/otros/remera-eyes/remera-eyes-1.jpg",
+        "/imagenes/otros/remera-eyes/remera-eyes-2.jpg",
+      ],
+    },
+    {
+      nombre: "Taza mariposa",
+      precio: "0",
+      imagenes: [
+        "/imagenes/otros/taza-mariposa/taza-mariposa-0.jpg",
+        "/imagenes/otros/taza-mariposa/taza-mariposa-1.jpg",
+      ],
+    },
+    {
+      nombre: "Taza minion",
+      precio: "0",
+      imagenes: [
+        "/imagenes/otros/taza-minion/taza-minion-0.jpg",
+        "/imagenes/otros/taza-minion/taza-minion-1.jpg",
+        "/imagenes/otros/taza-minion/taza-minion-2.jpg",
       ],
     },
   ],

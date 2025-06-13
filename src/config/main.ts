@@ -29,7 +29,7 @@ type Config = {
       | "instagram"
       | "phone"
       | "email"
-      | "location"]: ContactInfo;
+      | "location"]?: ContactInfo;
   };
   nav: {
     services: typeof servicesConfig.services;
@@ -42,37 +42,37 @@ type Config = {
 };
 
 const config: Config = {
-  title: "Process & Automation Consultancy Solutions",
-  shortTitle: "PACS LLC",
+  title: "Marxavarso",
+  shortTitle: "MAS",
   links: {
     site: {
       icon: "fa6-solid:globe",
-      href: "https://pacsllc.net",
+      href: "https://www.marxavarso.me",
     },
-    linkedin: {
-      icon: "fa6-brands:linkedin",
-      value: "pacsllc",
-      href: "https://www.linkedin.com/company/pacsllc/",
-    },
-    instagram: {
-      icon: "fa6-brands:instagram",
-      value: "pacs_llc",
-      href: "https://www.instagram.com/pacs_llc/",
-    },
-    phone: {
-      icon: "fa6-solid:phone",
-      value: "+1 (848) 330-6536",
-      href: "tel:+18483306536",
-    },
-    email: {
-      icon: "fa6-solid:envelope",
-      value: "info@pacsllc.net",
-      href: "mailto:info@pacsllc.net",
-    },
-    location: {
-      icon: "fa6-solid:map-location",
-      value: "NY / NJ",
-    },
+    // linkedin: {
+    //   icon: "fa6-brands:linkedin",
+    //   value: "pacsllc",
+    //   href: "https://www.linkedin.com/company/pacsllc/",
+    // },
+    // instagram: {
+    //   icon: "fa6-brands:instagram",
+    //   value: "pacs_llc",
+    //   href: "https://www.instagram.com/pacs_llc/",
+    // },
+    // phone: {
+    //   icon: "fa6-solid:phone",
+    //   value: "+1 (848) 330-6536",
+    //   href: "tel:+18483306536",
+    // },
+    // email: {
+    //   icon: "fa6-solid:envelope",
+    //   value: "info@pacsllc.net",
+    //   href: "mailto:info@pacsllc.net",
+    // },
+    // location: {
+    //   icon: "fa6-solid:map-location",
+    //   value: "NY / NJ",
+    // },
   },
   nav: {
     services: servicesConfig.services,
