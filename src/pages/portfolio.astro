@@ -1,0 +1,144 @@
+---
+import { config as mainConfig } from "@/config/main";
+import { config as pageConfig } from "@/config/pages/portfolio";
+const config = {
+  main: mainConfig,
+  page: pageConfig,
+};
+
+import { cn } from "@/lib/utils";
+
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+
+import Content from "@/components/section/Content.astro";
+import Content80 from "@/components/section/new/Content80.astro";
+import HalfAndHalf from "@/components/section/HalfAndHalf.astro";
+import ProportionalBento from "@/components/section/new/ProportionalBento.astro";
+
+import Hero from "@/components/section/new/Hero.astro";
+
+import { Icon } from "astro-icon/components";
+import { Button } from "@/components/ui/button";
+import { Accordion } from "@/components/my-ui/accordion";
+import { LogoBelt } from "@/components/section/new/LogoBelt";
+---
+
+<Layout title={config.main.shortTitle} class={cn("w-full")}>
+  <Header />
+
+  <main class={cn("col-[fullbleed]", "grid grid-cols-subgrid")}>
+    <Hero title="Portfolio"/>
+
+    <Content80
+      class={cn(
+        "text-white text-lg text-center",
+        "bg-[url(/images/textures/noise.svg)] bg-black/90 bg-blend-darken",
+        "pb-(--section-padding)"
+      )}
+    >
+      <div class="flex flex-col gap-y-6">
+        <p>
+          PACS LLC engineers and installs piggable manifolds, Robotic Decanting
+          Units (RDU), high-viscosity skids and lifecycle services for the
+          world’s top grease & lubricant producers.
+        </p>
+        <p>
+          Below is a sampling of recent projects. Click any picture to view it
+          full-size.
+          <!-- For the full gallery, visit pacsllc.net or our LinkedIn page. -->
+        </p>
+        <div class="bg-white/50 grid grid-cols-[5px_1fr_5px]">
+          <div class="col-[2/3] bg-black/50 py-6">
+            Need more detail? Download our full case-study PDF or contact us at
+            <a href="mailto:info@pacsllc.net">info@pacsllc.net</a>.
+          </div>
+        </div>
+      </div>
+    </Content80>
+
+    <Content80
+      class={cn(
+        "bg-[url('/images/textures/background.svg')] bg-cover bg-fixed",
+        "py-(--section-padding)"
+      )}
+    >
+      <div class="flex flex-col gap-8">
+        {config.page.projects
+        .map((project) => (
+          <div
+            class={cn(
+              "bg-white shadow-2xl rounded-2xl text-lg",
+              "flex flex-col",
+              "px-8 py-16 gap-8",
+            )}
+          >
+            <div class="flex justify-between">
+              <div>
+                <h2 class="text-5xl font-bold">{project.name}</h2>
+                <h3 class="text-2xl">{project.description}</h3>
+              </div>
+              <!-- Logos -->
+              <div class="flex gap-2">
+                {project.clients.map(client => <img alt={client.name} src={client.imageSrc} class="h-8" />)}
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[5fr_4fr]">
+              <div class="flex flex-col gap-2">
+                <div class="flex-col">
+                  <h4 class="bg-black rounded text-white px-2 py-1 w-fit">Solution</h4>
+                  <p>{project.solution}</p>
+                </div>
+
+                <div class="flex-col">
+                  <h4 class="bg-black rounded text-white px-2 py-1 w-fit">Result</h4>
+                  <p>{project.result}</p>
+                </div>
+
+                <div class="flex-col">
+                  <h4 class="bg-black rounded text-white px-2 py-1 w-fit">Timeline</h4>
+                  <p>{project.timeline}</p>
+                </div>
+              </div>
+
+              <!-- Gallery -->
+              <div class="flex flex-col gap-2">
+                <div class="grid grid-cols-3">
+                  <img src={project.gallery[0]} class="aspect-[16/27] rounded-l-lg object-[0%_0%]" />
+                  <img src={project.gallery[1]} class="aspect-[16/27] object-[33.33%_0%]" />
+                  <img src={project.gallery[2]} class="aspect-[16/27] rounded-r-lg object-[66.66%_0%]" />
+                </div>
+                <p class="flex gap-1 items-center"><Icon class="inline" name="fa6-solid:magnifying-glass-plus" /><span>Click to enlarge images</span></p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+      </div>
+    </Content80>
+
+    <!-- <div
+      class={cn(
+        "col-[fullbleed]",
+        "grid grid-cols-subgrid",
+        "bg-[url('/images/textures/background.svg')] bg-cover bg-fixed",
+      )}
+    >
+      <SectionPadding />
+
+      <section class={cn("col-[content]", "flex flex-col items-center")}>
+        <h1 class="font-bold text-7xl">Join the pack!</h1>
+
+        <SectionPadding />
+
+        <div class={cn("grid grid-cols-2 gap-16", "w-[80%]")}>???</div>
+      </section>
+
+      <SectionPadding />
+    </div> -->
+  </main>
+
+  <Footer />
+</Layout>
