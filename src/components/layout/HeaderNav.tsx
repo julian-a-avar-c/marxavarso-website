@@ -38,7 +38,7 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
             href="/"
             className={cn(
               navigationMenuTriggerStyle(),
-              "text-lg text-shadow font-semibold bg-background/0 rounded-none"
+              "text-lg text-shadow font-semibold bg-background/0 rounded-none",
             )}
             style={{ textDecorationLine: "none" }}
           >
@@ -51,7 +51,7 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
             href="/informacion"
             className={cn(
               navigationMenuTriggerStyle(),
-              "text-lg text-shadow font-semibold bg-background/0 rounded-none"
+              "text-lg text-shadow font-semibold bg-background/0 rounded-none",
             )}
             style={{ textDecorationLine: "none" }}
           >
@@ -88,7 +88,7 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
             <NavigationMenuTrigger
               className={cn(
                 navigationMenuTriggerStyle(),
-                "text-lg text-shadow font-semibold bg-background/0 rounded-none"
+                "text-lg text-shadow font-semibold bg-background/0 rounded-none",
               )}
             >
               <a href={item.href} style={{ textDecorationLine: "none" }}>
@@ -104,12 +104,15 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
                 .filter(({ categoria, productos }) => productos.length > 0)
                 .map(({ categoria, productos }) => {
                   return (
-                    <div key="flex flex-col gap-4">
+                    <div
+                      key={`${item.key}-${categoria}`}
+                      className="flex flex-col gap-4"
+                    >
                       <div>{presetarCategoria(categoria as Categoria)}</div>
                       <ul
                         className={cn(
                           "flex flex-wrap",
-                          "w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px]"
+                          "w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px]",
                         )}
                       >
                         {productos.map((producto) => (
@@ -134,7 +137,7 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
             href="/envios"
             className={cn(
               navigationMenuTriggerStyle(),
-              "text-lg text-shadow font-semibold bg-background/0 rounded-none"
+              "text-lg text-shadow font-semibold bg-background/0 rounded-none",
             )}
             style={{ textDecorationLine: "none" }}
           >
@@ -147,7 +150,7 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
             href="/contacto"
             className={cn(
               navigationMenuTriggerStyle(),
-              "text-lg text-shadow font-semibold bg-background/0 rounded-none"
+              "text-lg text-shadow font-semibold bg-background/0 rounded-none",
             )}
             style={{ textDecorationLine: "none" }}
           >
@@ -169,7 +172,7 @@ const TextListItem = React.forwardRef<
 >(
   (
     { className, listClassName, image, title, children, titleClass, ...props },
-    ref
+    ref,
   ) => {
     return (
       <li className={listClassName}>
@@ -183,7 +186,7 @@ const TextListItem = React.forwardRef<
               "select-none rounded-md no-underline outline-none transition-colors",
               "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
               "grid grid-cols-[auto_1fr]",
-              className
+              className,
             )}
             style={{ textDecorationLine: "none" }}
             {...props}
@@ -196,7 +199,7 @@ const TextListItem = React.forwardRef<
               className={cn(
                 "text-sm font-medium leading-none",
                 "row-[1/2]",
-                titleClass
+                titleClass,
               )}
             >
               {title}
@@ -204,7 +207,7 @@ const TextListItem = React.forwardRef<
             <p
               className={cn(
                 "line-clamp-2 text-sm leading-snug text-muted-foreground",
-                "row-[2/3]"
+                "row-[2/3]",
               )}
             >
               {children}
@@ -213,7 +216,7 @@ const TextListItem = React.forwardRef<
         </NavigationMenuLink>
       </li>
     );
-  }
+  },
 );
 TextListItem.displayName = "TextListItem";
 
@@ -227,7 +230,7 @@ const CircleListItem = React.forwardRef<
 >(
   (
     { className, listClassName, image, title, children, titleClass, ...props },
-    ref
+    ref,
   ) => {
     return (
       <li className={cn(listClassName)}>
@@ -240,7 +243,7 @@ const CircleListItem = React.forwardRef<
               "gap-x-4",
               "select-none rounded-full hover:rounded-full no-underline outline-none transition-colors",
               "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
+              className,
             )}
             style={{ textDecorationLine: "none" }}
             {...props}
@@ -253,6 +256,6 @@ const CircleListItem = React.forwardRef<
         </NavigationMenuLink>
       </li>
     );
-  }
+  },
 );
 CircleListItem.displayName = "CircleListItem";
