@@ -14,9 +14,10 @@ import { Input } from "../ui/input";
   class={cn(
     "col-[fullbleed]",
     "grid grid-cols-subgrid",
-    "bg-[#364A60] text-white",
+    "bg-accent text-accent-foreground",
     "py-2",
     "text-xl",
+    "sticky top-0 z-100",
   )}
 >
   <div class="flex justify-between md:hidden col-[fullbleed] pl-4 pr-6">
@@ -30,9 +31,12 @@ import { Input } from "../ui/input";
     </div>
   </div>
 
-  <div class="hidden md:grid grid-cols-subgrid col-[content] gap-4">
+  <div class="hidden md:grid grid-cols-subgrid col-[content] gap-4 items-center">
     <div class={cn("col-[fullbleed]", "grid grid-cols-[1fr_1fr_1fr]")}>
-      <img alt="logo" src="/logo.png" class="h-16" />
+      <div class="flex gap-3 xl:gap-6 items-center">
+        <img alt="logo" src="/logo.png" class="h-16" />
+        <div class="lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold">marxavarso.me</div>
+      </div>
       <div class="flex gap-2 items-center">
         <Input type="search" placeholder="¿Qué buscás?" />
         <Icon name="fa6-solid:magnifying-glass" />

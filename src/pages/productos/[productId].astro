@@ -29,6 +29,7 @@ import LabeledAccordion from "@/components/my-ui/LabeledAccordion.astro";
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { DisplayCarousel } from "@/components/my-ui/page/index/display-carousel";
 import { ProductCarousel } from "@/components/my-ui/product-carousel";
+import { Badge } from "@/components/ui/badge";
 
 function randomIntFromInterval(min: number, max: number) {
   // min and max included
@@ -69,13 +70,14 @@ const producto = productos.find(({ id }) => id === productId)!;
         {
           producto.categorias.length > 0 &&
             producto.categorias.map((categoria) => (
-              <span
-                class={cn("px-2 py-0.5 bg-zinc-800 text-white w-fit", {
+              <Badge
+                variant="default"
+                className={cn("bg-accent text-accent-foreground rounded-none", {
                   "bg-red-400": categoria === "oferta",
                 })}
               >
                 {categoria}
-              </span>
+              </Badge>
             ))
         }
         <div><a>Ver más detalles</a></div>

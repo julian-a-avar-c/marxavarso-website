@@ -116,6 +116,7 @@ export function HeaderNav({ class: className }: HeaderNavProps) {
                           // TODO: href
                           <CircleListItem
                             key={`top-nav-productos-${producto.id}`}
+                            href={`/productos/${producto.id}`}
                             image={producto.imagenes[0]}
                             className="rounded-full w-fit"
                           />

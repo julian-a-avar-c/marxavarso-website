@@ -29,6 +29,7 @@ import LabeledAccordion from "@/components/my-ui/LabeledAccordion.astro";
 import { HeaderNav } from "@/components/layout/HeaderNav";
 import { DisplayCarousel } from "@/components/my-ui/page/index/display-carousel";
 import { ProductCarousel } from "@/components/my-ui/product-carousel";
+import { Badge } from "@/components/ui/badge";
 
 function randomIntFromInterval(min: number, max: number) {
   // min and max included
@@ -78,7 +79,7 @@ function randomIntFromInterval(min: number, max: number) {
             // .sort((a, b) => Math.random() * 2 - 1)
             .map((producto) => {
               return (
-                <a class="hover:no-underline hover:cursor-pointer">
+                <a class="hover:no-underline hover:cursor-pointer" href={`/productos/${producto.id}`}>
                   <div class="flex flex-col gap-1">
                     <ProductCarousel
                       imagenes={producto.imagenes}
@@ -86,16 +87,14 @@ function randomIntFromInterval(min: number, max: number) {
                     />
                     <div class="flex flex-wrap gap-1">
                       {producto.categorias.map((categoria) => (
-                        <span
-                          class={cn(
-                            "px-2 py-0.5 bg-zinc-800 text-white w-fit",
-                            {
-                              "bg-red-400": categoria === "oferta",
-                            }
-                          )}
+                        <Badge
+                          variant="default"
+                          className={cn("bg-accent text-accent-foreground rounded-none", {
+                            "bg-red-400": categoria === "oferta",
+                          })}
                         >
                           {categoria}
-                        </span>
+                        </Badge>
                       ))}
                     </div>
                     <h2>{producto.nombre}</h2>
