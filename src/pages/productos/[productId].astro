@@ -14,7 +14,6 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
 
-import HalfAndHalf from "@/components/section/HalfAndHalf.astro";
 import Content80 from "@/components/section/new/Content80.astro";
 import ProportionalBento from "@/components/section/new/ProportionalBento.astro";
 
@@ -67,6 +66,7 @@ const producto = productos.find(({ id }) => id === productId)!;
       <div class="flex flex-col gap-4">
         <h1 class="text-5xl font-bold">{producto.nombre}</h1>
         <div class="text-4xl">{producto.precio}</div>
+        <div class="flex gap-2">
         {
           producto.categorias.length > 0 &&
             producto.categorias.map((categoria) => (
@@ -80,6 +80,7 @@ const producto = productos.find(({ id }) => id === productId)!;
               </Badge>
             ))
         }
+        </div>
         <div><a>Ver más detalles</a></div>
 
         {
@@ -88,13 +89,13 @@ const producto = productos.find(({ id }) => id === productId)!;
               <div>Talle:</div>
               <div class="flex gap-2">
                 {producto.talles.map((talle) => (
-                  <Button>{talle}</Button>
+                  <Button className="bg-accent">{talle}</Button>
                 ))}
               </div>
             </div>
           )
         }
-        <Button>Agregar al Carrito</Button>
+        <Button className="bg-accent">Agregar al Carrito</Button>
 
         <div class="flex">
           <Icon name="fa6-solid:circle-info" />
