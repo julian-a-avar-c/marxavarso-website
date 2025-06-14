@@ -6,10 +6,12 @@ import {
 import { cn } from "@/lib/utils";
 
 type DisplayCarouselProps = {
+  className?: string,
   images: string[];
+  imageClass?: string;
 };
 
-function DisplayCarousel({ images }: DisplayCarouselProps) {
+function DisplayCarousel({ className, images, imageClass }: DisplayCarouselProps) {
   return (
     <Carousel
       opts={{
@@ -17,6 +19,7 @@ function DisplayCarousel({ images }: DisplayCarouselProps) {
         duration: 5,
         active: true,
       }}
+      className={className}
     >
       <CarouselContent>
         {images.map((item) => (
@@ -30,7 +33,8 @@ function DisplayCarousel({ images }: DisplayCarouselProps) {
               src={item}
               className={cn(
                 "object-cover object-center",
-                "h-64 lg:h-128 w-full"
+                "h-64 lg:h-128 w-full",
+                imageClass
               )}
             />
           </CarouselItem>

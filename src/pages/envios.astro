@@ -1,0 +1,141 @@
+---
+import { config as mainConfig } from "@/config/main";
+import { config as pageConfig } from "@/config/pages/index";
+const config = {
+  main: mainConfig,
+  page: pageConfig,
+};
+import { productos } from "@/config/productos";
+
+import { cn } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
+
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+
+import Content80 from "@/components/section/new/Content80.astro";
+import ProportionalBento from "@/components/section/new/ProportionalBento.astro";
+
+import Hero from "@/components/section/new/page/index/Hero.astro";
+
+import { Button } from "@/components/ui/button";
+import { Accordion } from "@/components/my-ui/accordion";
+import { Input } from "@/components/ui/input";
+import { LogoBelt } from "@/components/section/new/LogoBelt";
+import LabeledAccordion from "@/components/my-ui/LabeledAccordion.astro";
+
+import { HeaderNav } from "@/components/layout/HeaderNav";
+import { DisplayCarousel } from "@/components/my-ui/page/index/display-carousel";
+import { ProductCarousel } from "@/components/my-ui/product-carousel";
+import { Badge } from "@/components/ui/badge";
+
+function randomIntFromInterval(min: number, max: number) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+---
+
+<Layout title="Inicio" class={cn("w-full")}>
+  <Header />
+
+  <main
+    class={cn("col-[fullbleed]", "grid grid-cols-subgrid", "overflow-hidden")}
+  >
+    <section class={cn("col-[fullbleed]", "grid grid-rows-1 grid-cols-1")}>
+      <img
+        src="/imagenes/marketing/2.jpg"
+        class="object-cover row-[1/-1] col-[1/-1] w-full"
+      />
+      <!-- <DisplayCarousel
+        className="row-[1/-1] col-[1/-1]"
+        imageClass={cn("min-h-[100vh] lg:min-h-[100vh]",)}
+        images={[
+          "/imagenes/marketing/1.jpg",
+          "/imagenes/marketing/2.jpg",
+          "/imagenes/marketing/3.jpg",
+          "/imagenes/marketing/4.jpg",
+          "/imagenes/marketing/5.jpg",
+          "/imagenes/marketing/6.jpg",
+          "/imagenes/marketing/7.jpg",
+          "/imagenes/marketing/8.jpg",
+          // TODO
+          // "/imagenes/marketing/9.jpg",
+          "/imagenes/marketing/10.jpg",
+        ]}
+        client:only="react"
+      /> -->
+      <div
+        class={cn(
+          "row-[1/-1] col-[1/-1]",
+          "z-100",
+          "flex flex-col items-center"
+        )}
+      >
+        <div
+          class={cn(
+            "bg-amber-100/10",
+            "h-full",
+            "w-[80%]",
+            "flex flex-col",
+            "px-64 py-8 gap-y-8",
+            "backdrop-blur-3xl",
+            "text-white",
+            "[&_h2]:text-4xl [&_h2]:text-white [&_h2]:bg-accent [&_h2]:w-fit [&_h2]:px-4 [&_h2]:py-2 [&_h2,&_h3,&_h4]:font-bold *:uppercase",
+            "[&>div]:flex [&>div]:flex-col [&>div]:gap-y-4"
+          )}
+        >
+          <div>
+            <h2>Motomensajeria</h2>
+            <div class="grid grid-cols-[auto_1fr] gap-x-4">
+              <h3>CABA Y GBA</h3>
+              <div>(LLEGA EL MISMO DIA QUE SE DESPACHA)</div>
+              <h3>puntos de retiro</h3>
+              <div>
+                CABALLITO O LA BOCA/SAN TELMO (COORDINANDO DIA Y HORIARIO)
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2>Informacion</h2>
+            <div>
+              todos los diseños están disponibles, si el producto no está en
+              stock, puede realizarse a pedido
+            </div>
+            <div class="grid grid-cols-[auto_1fr] gap-x-4">
+              <h3>tiempo de entrega</h3>
+              <h4 class="col-[1/2]">indumentaria</h4><p>
+                puede tardar aprox 5 días máximo
+              </p>
+              <h4>cerámica</h4><p>las piezas pueden tardar 3 semanas minimo</p>
+            </div>
+          </div>
+
+          <div>
+            <h2>Cambios</h2>
+            <div>
+              una vez hecha la compra los productos no tienen devolución a
+              excepción de que el producto esté roto o dañado
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- <footer>???</footer> -->
+</Layout>
+
+<style lang="scss">
+  html,
+  body {
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+  }
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+</style>
